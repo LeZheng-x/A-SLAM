@@ -218,6 +218,7 @@
       </sensor>
     </gazebo>
 
+  <!-- gazebo plugin　参数设置 -->
     <gazebo>
       <plugin name="${sensor_name}" filename="librealsense_gazebo_plugin.so">
         <prefix>${sensor_name}_</prefix>
@@ -238,8 +239,8 @@
         <infrared2OpticalframeName>${sensor_name}_infrared2_optical_frame</infrared2OpticalframeName>
         <rangeMinDepth>0.2</rangeMinDepth>
         <rangeMaxDepth>10.0</rangeMaxDepth>
-        <pointCloud>false</pointCloud>
-        <pointCloudTopicName>depth/color/points</pointCloudTopicName>
+        <pointCloud>true</pointCloud>
+        <pointCloudTopicName>depth/pointClouds</pointCloudTopicName>
         <pointCloudCutoff>0.25</pointCloudCutoff>
         <pointCloudCutoffMax>9.0</pointCloudCutoffMax>
       </plugin>
