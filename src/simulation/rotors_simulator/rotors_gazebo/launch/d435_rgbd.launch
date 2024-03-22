@@ -32,5 +32,13 @@
     <node name="hovering_example" pkg="rotors_gazebo" type="hovering_example" output="screen"/>
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
     <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+    
+        <!-- 在rviz中显示-->
+   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find rotors_gazebo)/rviz_cfg/cfg.rviz" required="true" />
+
   </group>
+      <!-- planner -->
+  <include file="$(find perception)/launch/d435.launch">
+      <arg name="mav_name" default="UAV"/>
+  </include>
 </launch>

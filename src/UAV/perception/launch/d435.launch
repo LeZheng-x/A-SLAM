@@ -1,0 +1,11 @@
+<launch>
+<arg name="mav_name" default="UAV"/>
+
+<group ns="voxblox">
+    <node name="$(arg mav_name)" pkg="perception" type="perception_node" output="screen" args="-alsologtostderr" clear_params="true">
+      <remap from="$(arg mav_name)/tsdf_map_in" to="tsdf_map"/>
+      <remap from="$(arg mav_name)/esdf_map_in" to="esdf_map"/>
+    </node>
+
+  </group>
+</launch>
