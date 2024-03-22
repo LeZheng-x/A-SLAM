@@ -18,4 +18,4 @@ chomod + 777 run.sh
 
 Then , gazebo and rviz gui will  appera,   
 you can use keyboard to control the UAV  
-( 'W' 'A' 'S' 'D' for moving ,and 'Q' 'E' for rotatting , 'esc' for exciting control)
+( 'W' 'A' 'S' 'D' for moving ,and 'Q' 'E' for rotating , 'esc' for exiting control)
