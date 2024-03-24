@@ -15,7 +15,6 @@ class A_SLAM{
         inline void setState(uint8_t state_){ state = state_;} 
         
         
-        void extractFrontier();
         void globalPlanner(); //TODO: add 主动回环
         void localPlanner(); // 寻找最佳覆盖的路径搜索
         void trajecyOpt();  //去做轨迹优化

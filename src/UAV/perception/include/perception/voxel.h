@@ -52,16 +52,22 @@ namespace perception{
 
             //block采用hash map　形式进行储存，方便索引查询与新数据的插入
             inline void resetMap(){myMap.clear();}
-            void updateMap();
-            void locateBlockFromMap(); 
+
+            //根据Index获得Block的智能指针，根据ifUpdate选择:不存在则根据Index创建,返回空指针
+            std::shared_ptr<EsdfVoxel> getBlockPtrByIndex(Eigen::Vector3i index,bool ifUpdate);
+            
+            //
+
+
             inline size_t getNumOfBlock(){return myMap.size();}
             inline bool hasBlock(const Eigen::Vector3i & index){
                 return myMap.count(index)>0 ; 
             }
+            inline size_t getNumVoxels(){return num_voxels_;}
         private:
             double voxel_size_ ; 
             uint32_t voxels_per_side_ ;
-
+            size_t num_voxels_;
             //哈希表计算方法：　将位置信息 index 按位进行异或操作
             std::unordered_map<Eigen::Vector3i, EsdfVoxel, EigenVector3Hash> myMap;
 

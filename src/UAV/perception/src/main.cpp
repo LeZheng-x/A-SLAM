@@ -22,7 +22,7 @@ int main(int argc, char **argv){
                 //寻找前沿点，PCA 降维,构建 Frontier Structure
                 // 
             UAV_planner.setState(uint8_t(perception::A_SLAM::State::FRONTER_DETECT));
-            UAV_planner.extractFrontier();
+            // UAV_planner.extractFrontier();
 
 
             

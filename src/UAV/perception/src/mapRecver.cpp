@@ -20,8 +20,4 @@ void A_SLAM::MapCallback(const voxblox_msgs::Layer& layer_msg){ // 1 HZ
     setState(uint8_t(State::MAP_RECV));
 }
 
-void A_SLAM::extractFrontier(){
-    
-}
-
 }

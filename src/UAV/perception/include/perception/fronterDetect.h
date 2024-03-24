@@ -20,7 +20,9 @@ class Fronter{
 
         //voxblox的地图格式是经过序列化的产物，需要进行解码
         //[return]: ifSucess
-        bool decodeMapData(const voxblox_msgs::Layer &voxelSets);
+        bool updateMap(const voxblox_msgs::Layer &voxelSets);
+
+        void decodeBlockData(const std::vector<uint32_t>& data,std::shared_ptr<EsdfVoxel> &block);
     private:
 
       //本质上是根据ros接口消息去构建自己的esdf 
