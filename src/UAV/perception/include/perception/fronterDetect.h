@@ -1,43 +1,36 @@
-#ifndef FRONTER_DETECT
-#define FRONTER_DETECT
+#ifndef FRONTER
+#define FRONTER
 
-#include <ros/ros.h>
-#include <iostream>
-
+#include <Eigen/Core>
+#include <vector>
+#include "voxel.h"
+#include <voxblox_msgs/Mesh.h>
+#include <voxblox_msgs/Layer.h>
 namespace perception{
-    
-    class Fronter{
 
-    public:
+
+
+// template <typename voxelType>
+class Fronter{
+    public: 
         Fronter();
 
-        ~Fronter();
+        //
+        bool extractFrontier();
 
-        void getFronter();
-
+        //voxblox的地图格式是经过序列化的产物，需要进行解码
+        //[return]: ifSucess
+        bool decodeMapData(const voxblox_msgs::Layer &voxelSets);
     private:
-        ros::NodeHandle n;
 
-        ros::Subscriber esdf_serv ;
-
-
-        /*
-        @brief 订阅esdf地图
-        */
-        void esdfCallback();
-        
-        /*
-        @brief 检测前沿点　
-        根据ｅｓｄｆ地图，划分前沿点并进行实时更新，确定前沿点最佳覆盖点，为global palnner 服务
-        */
-        void fronterDetect();
+      //本质上是根据ros接口消息去构建自己的esdf 
+      std::shared_ptr<EsdfMap> esdfMap_;
+      bool firstInitMap;
+};
 
 
-    };
+
 }
-
-
-
 
 
 #endif

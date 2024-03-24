@@ -1,4 +1,4 @@
-# A-SLAM based on information theory
+# Activate SLAM based on information theory
 
 ## Notes:
 This project is under development and unfinished so far.
@@ -13,7 +13,7 @@ UAV 仿真rotors_simulator: <https://github.com/ethz-asl/rotors_simulator>
 ![流程图](./src/data/1.png)
 
 ## How To Run
-chomod + 777 run.sh  
+chmod + 777 run.sh  
 ./run.sh  
 
 Then , gazebo and rviz gui will  appera,   
